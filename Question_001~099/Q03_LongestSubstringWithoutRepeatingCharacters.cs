@@ -23,7 +23,7 @@ public class Solution_Q3 {
 }
 
 [TestFixture]
-public class Test_Q3
+public class Test_Q03
 {
     [TestCase("abcabcbb", 3)]
     [TestCase("bbbbb", 1)]

@@ -1,4 +1,6 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using System.Diagnostics;
+
+namespace CodePractice.Question_001_099;
 
 public class Solution_Q1
 {
@@ -25,7 +27,7 @@ public class Solution_Q1
 
 
 [TestFixture]
-public class Test_Q1
+public class Test_Q01
 {
     [Test]
     public void Test()

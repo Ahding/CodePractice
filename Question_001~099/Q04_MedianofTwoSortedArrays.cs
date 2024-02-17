@@ -14,7 +14,7 @@ public class Solution_Q4 {
 }
 
 [TestFixture]
-public class Test_Q4
+public class Test_Q04
 {
     [TestCase(new []{1, 3}, new[]{2}, 2)]
     [TestCase(new []{1, 2}, new[]{3, 4}, 2.5)]
