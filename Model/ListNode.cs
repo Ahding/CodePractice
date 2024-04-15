@@ -48,4 +48,21 @@ public class ListNode
 
         return resultList.ToArray();
     }
+    
+    public void Concat(ListNode listNode)
+    {
+        if (isNull || listNode == null || listNode.isNull)
+        {
+            return;
+        }
+        
+        val = listNode.val;
+        var current = this;
+        while (current.next != null)
+        {
+            current = current.next;
+        }
+
+        current.next = listNode;
+    }
 }

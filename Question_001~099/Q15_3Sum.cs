@@ -57,9 +57,9 @@ public class Solution_Q15
 [TestFixture]
 public class Test_Q15
 {
-    [TestCase(new []{-1,0,1,2,-1,4}, new int[]{-1,-1,2}, new int[]{-1,0,1})]
+    [TestCase(new []{-1,0,1,2,-1,4}, new []{-1,-1,2}, new []{-1,0,1})]
     [TestCase(new []{0,1,1})]
-    [TestCase(new []{0,0,0}, new int[]{0,0,0})]
+    [TestCase(new []{0,0,0}, new []{0,0,0})]
     public void Test(int[] input, params int[][] output)
     {
         new Solution_Q15().ThreeSum(input).Select(x => x.ToArray()).ToArray().Should().BeEquivalentTo(output);
