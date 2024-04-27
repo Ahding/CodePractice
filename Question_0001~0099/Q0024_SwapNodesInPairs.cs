@@ -1,6 +1,6 @@
 ﻿using CodePractice.Model;
 
-namespace CodePractice.Question_001_099;
+namespace CodePractice.Question_0001_0099;
 
 public class Solution_Q0024
 {
