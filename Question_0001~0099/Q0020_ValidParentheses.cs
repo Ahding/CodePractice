@@ -1,7 +1,19 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q20
+namespace CodePractice.Question_0001_0099;
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+// An input string is valid if:
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+// Every close bracket has a corresponding open bracket of the same type.
+public class Solution_Q0020
 {
+    static Solution_Q0020()
+    {
+        SolutionCalculation.Add(Level.Easy);
+    }
+
     public bool IsValid(string s)
     {
         var keys = new Dictionary<char, char>
@@ -34,7 +46,7 @@ public class Solution_Q20
 }
 
 [TestFixture]
-public class Test_Q20
+public class Test_Q0020
 {
     [TestCase("()", true)]
     [TestCase("()[]{}", true)]
@@ -43,6 +55,6 @@ public class Test_Q20
     [TestCase("([)]", false)]
     public void Test(string input, bool output)
     {
-        new Solution_Q20().IsValid(input).Should().Be(output);
+        new Solution_Q0020().IsValid(input).Should().Be(output);
     }
 }

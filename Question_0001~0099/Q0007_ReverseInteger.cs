@@ -1,9 +1,17 @@
-﻿using System.Text;
+﻿using CodePractice.Model;
 
-namespace CodePractice.Question_001_099;
+namespace CodePractice.Question_0001_0099;
 
-public class Solution_Q7 {
-    public int Reverse(int x)
+// Given a 32-bit signed integer, reverse digits of an integer.
+// If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
+public static class Solution_Q0007 
+{
+    static Solution_Q0007()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+
+    public static int Reverse(int x)
     {
         return x > 0 
             ? _ReversePositive(x)
@@ -12,7 +20,7 @@ public class Solution_Q7 {
                 : 0 - _ReversePositive(0 - x) ;
     }
 
-    private int _ReversePositive(int x, int y = 0)
+    private static int _ReversePositive(int x, int y = 0)
     {
         return x > 9 
             ? _ReversePositive(x / 10, y * 10 + x % 10) 
@@ -23,7 +31,7 @@ public class Solution_Q7 {
 }
 
 [TestFixture]
-public class Test_Q07
+public class Test_Q0007
 {
     [TestCase(123, 321)]
     [TestCase(-123, -321)]
@@ -32,6 +40,6 @@ public class Test_Q07
     [TestCase(-2147483648, 0)]
     public void Test(int input, int output)
     {
-        new Solution_Q7().Reverse(input).Should().Be(output);
+        Solution_Q0007.Reverse(input).Should().Be(output);
     }
 }

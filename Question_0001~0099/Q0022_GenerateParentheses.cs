@@ -1,8 +1,16 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q22
+namespace CodePractice.Question_0001_0099;
+
+// Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+public static class Solution_Q0022
 {
-    public IList<string> GenerateParenthesis(int n)
+    static Solution_Q0022()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+
+    public static IList<string> GenerateParenthesis(int n)
     {
         var result = new List<string>();
         GenerateBracket(n, n, "", result);
@@ -10,7 +18,7 @@ public class Solution_Q22
         return result;
     }
     
-    private void GenerateBracket(int left, int right, string current, List<string> result)
+    private static void GenerateBracket(int left, int right, string current, List<string> result)
     {
         if (left == 0 && right == 0)
         {
@@ -31,7 +39,7 @@ public class Solution_Q22
 }
 
 [TestFixture]
-public class Test_Q22
+public class Test_Q0022
 {
     [TestCase(4,
         new string[]
@@ -43,6 +51,6 @@ public class Test_Q22
     [TestCase(1, new string[] { "()" })]
     public void Test(int input, string[] output)
     {
-        new Solution_Q22().GenerateParenthesis(input).Should().BeEquivalentTo(output);
+        Solution_Q0022.GenerateParenthesis(input).Should().BeEquivalentTo(output);
     }
 }

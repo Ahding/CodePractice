@@ -1,8 +1,18 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q17
+namespace CodePractice.Question_0001_0099;
+
+// Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+// Return the answer in any order.
+// A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+public static class Solution_Q0017
 {
-    public IList<string> LetterCombinations(string digits)
+    static Solution_Q0017()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+    
+    public static IList<string> LetterCombinations(string digits)
     {
         var result = new List<string>();
         foreach (var digit in digits)
@@ -30,7 +40,7 @@ public class Solution_Q17
         return result;
     }
 
-    private List<string> _GetValue(char value)
+    private static List<string> _GetValue(char value)
         => value switch
         {
             '2' => new List<string> { "a", "b", "c" },
@@ -53,6 +63,6 @@ public class Test_Q17
     [TestCase("2", new []{"a", "b", "c"})]
     public void Test(string input, string[] output)
     {
-        new Solution_Q17().LetterCombinations(input).Should().BeEquivalentTo(output.ToList());
+        Solution_Q0017.LetterCombinations(input).Should().BeEquivalentTo(output.ToList());
     }
 }

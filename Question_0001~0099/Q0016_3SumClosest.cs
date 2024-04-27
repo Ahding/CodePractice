@@ -1,8 +1,19 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q16
+namespace CodePractice.Question_0001_0099;
+
+// Given an integer array nums of length n and an integer target,
+// find three integers in nums such that the sum is closest to target.
+// Return the sum of the three integers.
+// You may assume that each input would have exactly one solution.
+public static class Solution_Q0016
 {
-    public int ThreeSumClosest(int[] nums, int target)
+    static Solution_Q0016()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+    
+    public static int ThreeSumClosest(int[] nums, int target)
     {
         int minDifference = int.MaxValue,
             minDifferenceTotal = int.MaxValue;
@@ -27,7 +38,7 @@ public class Solution_Q16
         return minDifferenceTotal;
     }
     
-    public int BetterThreeSumClosest(int[] nums, int target)
+    public static int BetterThreeSumClosest(int[] nums, int target)
     {
         Array.Sort(nums);
         int minDifference = int.MaxValue,
@@ -69,13 +80,13 @@ public class Solution_Q16
 }
 
 [TestFixture]
-public class Test_Q16
+public class Test_Q0016
 {
     [TestCase(new []{-1,2,1,-4}, 1, 2)]
     [TestCase(new []{0,0,0}, 1, 0)]
     [TestCase(new []{0,1,2}, 3, 3)]
     public void Test(int[] input, int target, int output)
     {
-        new Solution_Q16().BetterThreeSumClosest(input, target).Should().Be(output);
+        Solution_Q0016.BetterThreeSumClosest(input, target).Should().Be(output);
     }
 }

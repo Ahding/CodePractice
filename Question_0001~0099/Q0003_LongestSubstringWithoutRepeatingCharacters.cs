@@ -1,7 +1,16 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q3 {
-    public int LengthOfLongestSubstring(string s)
+namespace CodePractice.Question_0001_0099;
+
+// Given a string, find the length of the longest substring without repeating characters.
+public static class Solution_Q0003 
+{
+    static Solution_Q0003()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+    
+    public static int LengthOfLongestSubstring(string s)
     {
         if(s.Length == 1)
             return 1;
@@ -23,13 +32,13 @@ public class Solution_Q3 {
 }
 
 [TestFixture]
-public class Test_Q03
+public class Test_Q0003
 {
     [TestCase("abcabcbb", 3)]
     [TestCase("bbbbb", 1)]
     [TestCase("pwwkew", 3)]
     public void Test(string str, int result)
     {
-        new Solution_Q3().LengthOfLongestSubstring(str).Should().Be(result);
+        Solution_Q0003.LengthOfLongestSubstring(str).Should().Be(result);
     }
 }

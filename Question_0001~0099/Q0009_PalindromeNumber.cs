@@ -1,9 +1,17 @@
 ﻿using System.Text;
+using CodePractice.Model;
 
-namespace CodePractice.Question_001_099;
+namespace CodePractice.Question_0001_0099;
 
-public class Solution_Q9 {
-    public bool IsPalindrome(int x)
+// Given an integer x, return true if x is a palindrome, and false otherwise.
+public static class Solution_Q0009 
+{
+    static Solution_Q0009()
+    {
+        SolutionCalculation.Add(Level.Easy);
+    }
+
+    public static bool IsPalindrome(int x)
     {
         if (x < 0) return false;
 
@@ -21,13 +29,13 @@ public class Solution_Q9 {
 }
 
 [TestFixture]
-public class Test_Q09
+public class Test_Q0009
 {
     [TestCase(121, true)]
     [TestCase(-121, false)]
     [TestCase(10, false)]
     public void Test(int input, bool output)
     {
-        new Solution_Q9().IsPalindrome(input).Should().Be(output);
+        Solution_Q0009.IsPalindrome(input).Should().Be(output);
     }
 }

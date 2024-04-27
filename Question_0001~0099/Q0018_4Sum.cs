@@ -1,8 +1,21 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q18
+namespace CodePractice.Question_0001_0099;
+
+// Given an array nums of n integers, return an array of all the unique quadruplets
+// [nums[a], nums[b], nums[c], nums[d]] such that:
+// 0 <= a, b, c, d < n
+// a, b, c, and d are distinct.
+// nums[a] + nums[b] + nums[c] + nums[d] == target
+// You may return the answer in any order.
+public static class Solution_Q0018
 {
-    public IList<IList<int>> FourSum(int[] nums, int target)
+    static Solution_Q0018()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+
+    public static IList<IList<int>> FourSum(int[] nums, int target)
     {
         Array.Sort(nums);
         var result = new List<IList<int>>();
@@ -63,7 +76,7 @@ public class Test_Q18
     [TestCase(new [] {1000000000,1000000000,1000000000,1000000000}, -294967296, new int[]{})]
     public void Test(int[] input1, int input2, int[] output)
     {
-        new Solution_Q18().FourSum(input1, input2).Should().BeEquivalentTo(_Convert(output));
+        Solution_Q0018.FourSum(input1, input2).Should().BeEquivalentTo(_Convert(output));
     }
 
     private IList<IList<int>> _Convert(int[] input)

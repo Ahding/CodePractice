@@ -4,21 +4,19 @@ public class ListNode
 {
     public int val;
     public ListNode next;
-    public bool isNull;
     public ListNode(int val = 0, ListNode next = null) {
         this.val = val;
         this.next = next;
     }
 
-    public ListNode(int[] array)
+    public static ListNode FromArray(int[] array)
     {
         if (array == null || array.Length == 0)
         {
-            isNull = true;
-            return;
+            return null;
         }
 
-        ListNode result = new (), 
+        ListNode result = new (),
             current = result;
 
         foreach (var num in array)
@@ -27,42 +25,22 @@ public class ListNode
             current = current.next;
         }
 
-        next =  result.next.next;
-        val = result.next.val;
+        return result.next;
     }
     
-    public int[] ToArray()
+    public static ListNode[] FromArray(int[][] array)
     {
-        if (isNull)
+        if (array == null || array.Length == 0)
         {
-            return new int[] { };
-        }
-        var resultList = new List<int>();
-        var current = this;
-
-        while (current != null)
-        {
-            resultList.Add(current.val);
-            current = current.next;
+            return Array.Empty<ListNode>();
         }
 
-        return resultList.ToArray();
-    }
-    
-    public void Concat(ListNode listNode)
-    {
-        if (isNull || listNode == null || listNode.isNull)
+        var result = new ListNode[array.Length];
+        for (int i = 0; i < array.Length; i++)
         {
-            return;
-        }
-        
-        val = listNode.val;
-        var current = this;
-        while (current.next != null)
-        {
-            current = current.next;
+            result[i] = FromArray(array[i]);
         }
 
-        current.next = listNode;
+        return result;
     }
 }

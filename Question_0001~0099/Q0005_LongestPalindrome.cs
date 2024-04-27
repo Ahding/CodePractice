@@ -1,11 +1,19 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q5
+namespace CodePractice.Question_0001_0099;
+
+// Given a string s, return the longest palindromic substring in s.
+public static class Solution_Q0005
 {
-    private int _maxLength;
-    private string _result = "";
+    static Solution_Q0005()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+
+    private static int _maxLength;
+    private static string _result = "";
     
-    public string LongestPalindrome(string s)
+    public static string LongestPalindrome(string s)
     {
         _maxLength = 1;
         _result = s[0].ToString();
@@ -21,7 +29,7 @@ public class Solution_Q5
         return _result;
     }
 
-    private void CheckPalindrome(string s, int i, bool isDouble)
+    private static void CheckPalindrome(string s, int i, bool isDouble)
     {
         int l = i, r = i + (isDouble ? 1 : 0);
         while (l >= 0 && r < s.Length && s[l] == s[r])
@@ -39,13 +47,13 @@ public class Solution_Q5
 }
 
 [TestFixture]
-public class Test_Q05
+public class Test_Q0005
 {
     [TestCase("abcdefe", "efe")]
     [TestCase("babad", "bab")]
     [TestCase("cbbd", "bb")]
     public void Test(string input, string output)
     {
-        new Solution_Q5().LongestPalindrome(input).Should().Be(output);
+        Solution_Q0005.LongestPalindrome(input).Should().Be(output);
     }
 }

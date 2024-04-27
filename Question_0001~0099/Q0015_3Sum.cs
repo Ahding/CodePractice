@@ -1,8 +1,18 @@
-﻿namespace CodePractice.Question_001_099;
+﻿using CodePractice.Model;
 
-public class Solution_Q15
+namespace CodePractice.Question_0001_0099;
+
+// Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k,
+// and nums[i] + nums[j] + nums[k] == 0.
+// Notice that the solution set must not contain duplicate triplets.
+public static class Solution_Q0015
 {
-    public IList<IList<int>> ThreeSum(int[] nums)
+    static Solution_Q0015()
+    {
+        SolutionCalculation.Add(Level.Medium);
+    }
+    
+    public static IList<IList<int>> ThreeSum(int[] nums)
     {
         var result = new List<IList<int>>();
         if (nums.Length <= 2)
@@ -55,13 +65,13 @@ public class Solution_Q15
 }
 
 [TestFixture]
-public class Test_Q15
+public class Test_Q0015
 {
     [TestCase(new []{-1,0,1,2,-1,4}, new []{-1,-1,2}, new []{-1,0,1})]
     [TestCase(new []{0,1,1})]
     [TestCase(new []{0,0,0}, new []{0,0,0})]
     public void Test(int[] input, params int[][] output)
     {
-        new Solution_Q15().ThreeSum(input).Select(x => x.ToArray()).ToArray().Should().BeEquivalentTo(output);
+        Solution_Q0015.ThreeSum(input).Should().BeEquivalentTo(output);
     }
 }
